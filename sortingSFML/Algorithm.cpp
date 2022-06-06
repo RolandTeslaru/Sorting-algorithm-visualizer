@@ -13,8 +13,28 @@ Clock clock1;
 sf::Time t1 ;
 sf::Time t2 ;
 
-void alg::bubblesort(int *V)
+int alg::insertionsort(int *V)
 {
+    bool modified = false;
+    for(int i = 1 ; i <= size ; i ++)
+    {
+        int p = i;
+        while(p > 0 && V[p] < V[p-1])
+        {
+            swap(V[p] , V[p-1]);
+            p --;
+            modified = true;
+        }
+        if(modified)
+            return 0;
+    }
+    return 0;
+}
+
+int alg::bubblesort(int *V)
+{
+    cout << " HELLO ? " << endl;
+    bool modified = false;
     bool sorted = true;
     do
     {
@@ -27,17 +47,20 @@ void alg::bubblesort(int *V)
                 sorted = false;
 //                draw(V);
 //                exportArray(V, size);
+                modified = true;
             }
         }
+        if(modified)
+            return 0;
     }while(!sorted);
     
-    for(int i = 1 ; i <= size ; i ++)
-        cout << V[i] << " ";
+    return 0;
 }
 
 int alg::selectionsort(int *V)
 {
     bool modified = false;
+    int value  = 0 ;
     for(int i = 1 ; i <= size ; i ++)
     {
         t1 = clock1.getElapsedTime();
@@ -48,11 +71,12 @@ int alg::selectionsort(int *V)
             {
                 p = j;
                 modified = true;
+                value = i ;
             }
         }
         swap(V[i] , V[p]);
         if(modified)
-            return i;
+            return value;
 //        t2 = clock1.getElapsedTime();
 //        cout << clock1.getElapsedTime().asMicroseconds()<< endl;
 //        if(t2 - t1 == sf::seconds(10))

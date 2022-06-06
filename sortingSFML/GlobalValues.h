@@ -14,5 +14,4 @@ const static int WinX = 1920;
 const static int WinY = 1080;
 //int scale = 1;
 
-
 #endif /* GlobalValues_h */

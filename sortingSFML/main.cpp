@@ -14,19 +14,26 @@ using namespace sf;
 
 int main()
 {
-    int size =100;
+    int size =300;
     int V[size+1];
     
-    string type;
-    type = "normal";
+    string arrtype;
+    arrtype = "normal";
+    // "random"
+    // "normal"  ( in ascending order)
+    // "manual"  ( typed in manually )
+    string algtype;
+    algtype = "selectionsort";
     
     alg alg1;
     arr MainArray;
     mainWinInit();
     
+    alg1.setalg(algtype);
+    
     MainArray.setsize(size);
     alg1.setsize(size);
-    MainArray.generate_arr(V, type);
+    MainArray.generate_arr(V, arrtype);
     
     MainArray.shuffle_arr(V);
     MainArray.show_arr(V);

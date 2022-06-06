@@ -11,11 +11,11 @@ void arr::generate_arr(int *V, string type)
 {
     if(type == "random")
     {
-//            srand(time(NULL));
-//            for(i = 1 ; i <= size ; i ++ )
-//            {
-//               V[i] = *(rand() % 100);
-//            }
+            srand(time(NULL));
+            for(int i = 1 ; i <= size ; i ++ )
+            {
+               V[i] = (rand() % 100);
+            }
     }
     else if(type == "normal")
     {

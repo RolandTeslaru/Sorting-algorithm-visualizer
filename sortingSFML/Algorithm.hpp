@@ -16,18 +16,24 @@ class alg
 {
 private:
 public:
-    
     int size;
+    
+    string algtype;
     
     void setsize(int getsize)
     {
         size = getsize;
     }
-    void bubblesort(int *V);
+    int bubblesort(int *V);
     
     int selectionsort(int *V);
     
-    string algtype();
+    int insertionsort(int *V);
+    
+    void setalg(string type)
+    {
+        algtype = type;
+    }
 };
 
 class test
